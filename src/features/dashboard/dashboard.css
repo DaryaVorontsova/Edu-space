@@ -1,0 +1,17 @@
+.added:hover {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+.added-card {
+    background-color: transparent !important;
+    border: 2px dashed #6c757d !important;
+}
+  
+.subject-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%;
+    display: inline-block;
+}

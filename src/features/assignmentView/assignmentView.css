@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+    .submission-table {
+      font-size: 14px;
+    }
+  
+    .submission-table .name-header {
+      font-size: 12px;
+    }
+  
+    .submission-table td {
+      padding: 8px;
+    }
+  
+    .submission-table .fw-bold {
+      font-size: 12px;
+    }
+  
+    .submission-table button {
+      font-size: 12px;
+    }
+  }
+  

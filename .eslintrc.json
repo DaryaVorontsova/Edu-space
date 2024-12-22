@@ -1,0 +1,82 @@
+{
+    "root": true,
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": { "project": true, "tsconfigRootDir": "./" },
+    "plugins": ["react-hooks", "jsx-a11y", "@typescript-eslint", "prettier"],
+    "ignorePatterns": ["dist", "vite.config.ts", "node_modules"],
+    "rules": {
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { "fixStyle": "separate-type-imports" }
+      ],    
+      "@typescript-eslint/no-restricted-imports": [
+        "error",
+        {
+          "paths": [
+            {
+              "name": "react-redux",
+              "importNames": ["useSelector", "useStore", "useDispatch"],
+              "message": "Please use pre-typed versions from `src/app/hooks.ts` instead."
+            }
+          ]
+        }
+      ],
+      "@typescript-eslint/promise-function-async": [
+        "error",
+        { "checkArrowFunctions": false }
+      ],
+      "curly": ["error", "all"],
+      "prefer-const": "error",
+      "no-var": "error",
+      "no-shadow-restricted-names": "error",
+      "no-console": "warn",
+      "padding-line-between-statements": [
+        "error",
+        { "blankLine": "always", "prev": "block-like", "next": "*" },
+        { "blankLine": "always", "prev": "*", "next": "block-like" },
+        { "blankLine": "always", "prev": "*", "next": "return" },
+        { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+        { "blankLine": "always", "prev": "*", "next": ["const", "let", "var"] },
+        {
+          "blankLine": "any",
+          "prev": ["const", "let", "var"],
+          "next": ["const", "let", "var"]
+        }
+      ],
+  
+      "react-hooks/rules-of-hooks": "error",
+  
+      "prettier/prettier": [
+        "error",
+        {
+          "semi": true,
+          "endOfLine": "auto"
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": ["*.{c,m,}{t,j}s", "*.{t,j}sx"],
+        "extends": ["plugin:@typescript-eslint/recommended"]
+      },
+      {
+        "files": ["src/app/hooks.ts"],
+        "rules": {
+          "@typescript-eslint/no-restricted-imports": "off" 
+        }
+      }
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
+  
